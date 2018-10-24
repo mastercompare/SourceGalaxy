@@ -4,6 +4,9 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace WeatherApp.iOS
 {
@@ -24,6 +27,8 @@ namespace WeatherApp.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+
+            AppCenter.Start("73af5c35-a9e7-4f5b-9e48-5f769999e362", typeof(Analytics), typeof(Crashes));
 
             return base.FinishedLaunching(app, options);
         }
